@@ -1,0 +1,27 @@
+{
+  "name": "hydration-bot",
+  "version": "1.0.0",
+  "description": "Private Telegram Hydration Reminder Bot - Cloudflare Worker",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "db:init": "wrangler d1 execute hydration-db --file=./schema.sql",
+    "db:init:local": "wrangler d1 execute hydration-db --local --file=./schema.sql",
+    "tail": "wrangler tail"
+  },
+  "keywords": [
+    "cloudflare-workers",
+    "telegram-bot",
+    "hydration",
+    "d1"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240117.0",
+    "typescript": "^5.3.3",
+    "wrangler": "^4.61.1"
+  }
+}

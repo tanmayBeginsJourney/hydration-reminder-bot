@@ -1,0 +1,28 @@
+# Hydration Bot Worker Configuration
+# NOTE: Infrastructure is LOCKED - do not modify bindings
+
+name = "hydration-bot"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# D1 Database binding (pre-provisioned)
+[[d1_databases]]
+binding = "DB"
+database_name = "hydration-db"
+database_id = "013ce004-8931-423a-88b4-9f92a8586f43" # Replace with actual D1 database ID
+
+# Cron triggers
+[triggers]
+crons = [
+  "0 * * * *",     # Every 1 hour - Love message + Hydration reminder (hydration disabled 12 AM–8 AM IST in code)
+  "30 18 * * *"    # 18:30 UTC = 00:00 IST - Daily Summary
+]
+
+# Groq free-tier LLM (OpenAI-compatible)
+[vars]
+OPENAI_BASE_URL = "https://api.groq.com/openai/v1/chat/completions"
+OPENAI_MODEL = "llama-3.3-70b-versatile"
+
+# Secrets (set via wrangler secret put; not stored in repo)
+# TELEGRAM_BOT_TOKEN - Required. Set via: wrangler secret put TELEGRAM_BOT_TOKEN
+# OPENAI_API_KEY - Groq key. Set via: wrangler secret put OPENAI_API_KEY

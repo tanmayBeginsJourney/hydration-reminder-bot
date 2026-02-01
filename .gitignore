@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Wrangler / Cloudflare
+.wrangler/
+
+# Secrets and env (do not commit)
+.env
+.env.*
+.dev.vars
+
+# Logs and artifacts
+*.log
+npm-debug.log*
+
+# OS and editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.sublime-*
+
+# Build / dist (if added later)
+dist/
+.output/
