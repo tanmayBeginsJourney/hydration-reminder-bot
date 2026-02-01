@@ -1,4 +1,4 @@
-# Water Reminder (waterReminer)
+# Water Reminder 
 
 A **single-user Telegram bot** that helps track daily water intake. It runs as a **Cloudflare Worker** with **D1** for storage and an optional **OpenAI-compatible LLM** (e.g. Groq) for natural-language parsing. The bot uses a very affectionate, lovey-dovey tone and sends hourly love messages plus hydration reminders.
 
